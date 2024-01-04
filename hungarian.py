@@ -103,7 +103,7 @@ st.set_page_config(
   page_icon = ":skull:"
 )
 
-st.title(":heart: :red[Hungarian Heart Disease] :heart:")
+st.title(":heart: :red[Hungarian Heart Disease] :heart:",divider ="red")
 st.write(f"Model Akurasi :  :green[**{accuracy}**]%")
 st.write("")
 
