@@ -206,7 +206,7 @@ with tab1:
 
   preview_df = pd.DataFrame(data, index=['input'])
 
-  st.header("User Input as DataFrame")
+  st.header("Detail Input Pengguna")
   st.write("")
   st.dataframe(preview_df.iloc[:, :6])
   st.write("")
