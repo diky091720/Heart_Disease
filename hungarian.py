@@ -126,7 +126,7 @@ with tab1:
   # -- Value 0: Female
   # -- Value 1: Male
 
-  cp_sb = st.sidebar.selectbox(label=":pink[**Chest pain type**]", options=["Typical angina", "Atypical angina", "Non-anginal pain", "Asymptomatic"])
+  cp_sb = st.sidebar.selectbox(label=":blue[**Chest pain type**]", options=["Typical angina", "Atypical angina", "Non-anginal pain", "Asymptomatic"])
   st.sidebar.write("")
   st.sidebar.write("")
   if cp_sb == "Typical angina":
@@ -142,15 +142,15 @@ with tab1:
   # -- Value 3: non-anginal pain
   # -- Value 4: asymptomatic
 
-  trestbps = st.sidebar.number_input(label=":pink[**Resting blood pressure** (in mm Hg on admission to the hospital)]", min_value=df_final['trestbps'].min(), max_value=df_final['trestbps'].max())
+  trestbps = st.sidebar.number_input(label=":blue[**Resting blood pressure** (in mm Hg on admission to the hospital)]", min_value=df_final['trestbps'].min(), max_value=df_final['trestbps'].max())
   st.sidebar.write(f":orange[Min] value: :orange[**{df_final['trestbps'].min()}**], :red[Max] value: :red[**{df_final['trestbps'].max()}**]")
   st.sidebar.write("")
 
-  chol = st.sidebar.number_input(label=":pink[**Serum cholestoral** (in mg/dl)]", min_value=df_final['chol'].min(), max_value=df_final['chol'].max())
+  chol = st.sidebar.number_input(label=":blue[**Serum cholestoral** (in mg/dl)]", min_value=df_final['chol'].min(), max_value=df_final['chol'].max())
   st.sidebar.write(f":orange[Min] value: :orange[**{df_final['chol'].min()}**], :red[Max] value: :red[**{df_final['chol'].max()}**]")
   st.sidebar.write("")
 
-  fbs_sb = st.sidebar.selectbox(label=":pink[**Fasting blood sugar > 120 mg/dl?**]", options=["False", "True"])
+  fbs_sb = st.sidebar.selectbox(label=":blue[**Fasting blood sugar > 120 mg/dl?**]", options=["False", "True"])
   st.sidebar.write("")
   st.sidebar.write("")
   if fbs_sb == "False":
@@ -160,7 +160,7 @@ with tab1:
   # -- Value 0: false
   # -- Value 1: true
 
-  restecg_sb = st.sidebar.selectbox(label=":pink[**Resting electrocardiographic results**]", options=["Normal", "Having ST-T wave abnormality", "Showing left ventricular hypertrophy"])
+  restecg_sb = st.sidebar.selectbox(label=":blue[**Resting electrocardiographic results**]", options=["Normal", "Having ST-T wave abnormality", "Showing left ventricular hypertrophy"])
   st.sidebar.write("")
   st.sidebar.write("")
   if restecg_sb == "Normal":
@@ -173,11 +173,11 @@ with tab1:
   # -- Value 1: having ST-T wave abnormality (T wave inversions and/or ST  elevation or depression of > 0.05 mV)
   # -- Value 2: showing probable or definite left ventricular hypertrophy by Estes' criteria
 
-  thalach = st.sidebar.number_input(label=":pink[**Maximum heart rate achieved**]", min_value=df_final['thalach'].min(), max_value=df_final['thalach'].max())
+  thalach = st.sidebar.number_input(label=":blue[**Maximum heart rate achieved**]", min_value=df_final['thalach'].min(), max_value=df_final['thalach'].max())
   st.sidebar.write(f":orange[Min] value: :orange[**{df_final['thalach'].min()}**], :red[Max] value: :red[**{df_final['thalach'].max()}**]")
   st.sidebar.write("")
 
-  exang_sb = st.sidebar.selectbox(label=":pink[**Exercise induced angina?**]", options=["No", "Yes"])
+  exang_sb = st.sidebar.selectbox(label=":blue[**Exercise induced angina?**]", options=["No", "Yes"])
   st.sidebar.write("")
   st.sidebar.write("")
   if exang_sb == "No":
@@ -187,7 +187,7 @@ with tab1:
   # -- Value 0: No
   # -- Value 1: Yes
 
-  oldpeak = st.sidebar.number_input(label=":pink[**ST depression induced by exercise relative to rest**]", min_value=df_final['oldpeak'].min(), max_value=df_final['oldpeak'].max())
+  oldpeak = st.sidebar.number_input(label=":blue[**ST depression induced by exercise relative to rest**]", min_value=df_final['oldpeak'].min(), max_value=df_final['oldpeak'].max())
   st.sidebar.write(f":orange[Min] value: :orange[**{df_final['oldpeak'].min()}**], :red[Max] value: :red[**{df_final['oldpeak'].max()}**]")
   st.sidebar.write("")
 
