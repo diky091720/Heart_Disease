@@ -107,7 +107,7 @@ st.title(":heart: :red[Hungarian Heart Disease] :heart:")
 st.write(f"Model Akurasi :  :green[**{accuracy}**]%")
 st.write("")
 
-tab1, tab2 = st.tabs([":sword: :rainbow[Single]", "Multi-predict"])
+tab1, tab2 = st.tabs([":rainbow[**Single**]", ":yellow[**Multi**]"])
 
 with tab1:
   st.sidebar.header("Input Data")
