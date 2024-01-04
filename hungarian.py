@@ -103,15 +103,14 @@ st.set_page_config(
   page_icon = ":skull:"
 )
 
-st.title("Hungarian Heart Disease")
-page_icon = ":skull:"
-st.write(f"**_Model's Accuracy_** :  :green[**{accuracy}**]% (:red[_Do not copy outright_])")
+st.title("Hungarian Heart Disease :heart:")
+st.write(f"**Akurasi Model** :  :green[**{accuracy}**]% (:red[_Do not copy outright_])")
 st.write("")
 
 tab1, tab2 = st.tabs(["Single-predict", "Multi-predict"])
 
 with tab1:
-  st.sidebar.header("**User Input** Sidebar")
+  st.sidebar.header("Input Data")
 
   age = st.sidebar.number_input(label=":violet[**Age**]", min_value=df_final['age'].min(), max_value=df_final['age'].max())
   st.sidebar.write(f":orange[Min] value: :orange[**{df_final['age'].min()}**], :red[Max] value: :red[**{df_final['age'].max()}**]")
