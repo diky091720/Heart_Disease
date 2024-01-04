@@ -104,7 +104,7 @@ st.set_page_config(
 )
 
 st.title("Hungarian Heart Disease :heart:")
-st.write(f"**Akurasi Model** :  :green[**{accuracy}**]%
+st.write(f"**Akurasi Model** :  :green[**{accuracy}**]%)
 st.write("")
 
 tab1, tab2 = st.tabs(["Single-predict", "Multi-predict"])
