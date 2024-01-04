@@ -116,7 +116,7 @@ with tab1:
   st.sidebar.write(f":orange[Min] value: :orange[**{df_final['age'].min()}**], :red[Max] value: :red[**{df_final['age'].max()}**]")
   st.sidebar.write("")
 
-  sex_sb = st.sidebar.selectbox(label=":pink[**Sex**]", options=["Male", "Female"])
+  sex_sb = st.sidebar.selectbox(label=":blue[**Sex**]", options=["Male", "Female"])
   st.sidebar.write("")
   st.sidebar.write("")
   if sex_sb == "Male":
