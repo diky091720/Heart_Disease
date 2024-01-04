@@ -100,7 +100,7 @@ df_final['target'] = y
 # STREAMLIT
 st.set_page_config(
   page_title = "Hungarian Heart Disease",
-  page_icon = ":heart:"
+  page_icon = ":skull:"
 )
 
 st.title("Hungarian Heart Disease")
