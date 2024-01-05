@@ -108,7 +108,7 @@ st.set_page_config(
 #Memberikan tittle
 st.title(":heart: :red[Hungarian Heart Disease] :heart:")
 st.write(f"Model Akurasi :  :green[**{accuracy}**]%")
-st.write(":rainbow[Jenis Model : XGBOOST].")
+st.markdown(":rainbow[Jenis Model : XGBOOST]")
 st.write("")
 #Membuat 2 tab
 tab1, tab2 = st.tabs(["[Single]", "[Multi]"])
