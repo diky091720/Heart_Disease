@@ -108,6 +108,7 @@ st.set_page_config(
 #Memberikan tittle
 st.title(":heart: :red[Hungarian Heart Disease] :heart:")
 if accuracy > 80:
+  st.metric(label="Akurasi", value={accuracy}%, delta="High")
   st.write(f"Model Akurasi :  :green[**{accuracy}**]% :green[High]")
 elif accuracy < 79:
   st.write(f"Model Akurasi :  :red[**{accuracy}**]% :red[Low]")
