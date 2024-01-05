@@ -107,7 +107,10 @@ st.set_page_config(
 )
 #Memberikan tittle
 st.title(":heart: :red[Hungarian Heart Disease] :heart:")
-st.write(f"Model Akurasi :  :green[**{accuracy}**]%")
+if accuracy > 80:
+  st.write(f"Model Akurasi :  :green[**{accuracy}**]% :green[High]")
+elif accuracy < 79:
+  st.write(f"Model Akurasi :  :red[**{accuracy}**]% :red[Low]")
 st.write("Jenis Model : :blue[**XGBOOST**]")
 st.write("")
 #Membuat 2 tab
