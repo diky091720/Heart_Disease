@@ -218,17 +218,17 @@ with tab1:
   st.write("")
 
   result = ":violet[-]"
-
+  #Membuat button prediksi
   predict_btn = st.button("**Predict**", type="primary")
 
   st.write("")
   if predict_btn:
     inputs = [[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak]]
     prediction = model.predict(inputs)[0]
-
+    
     bar = st.progress(0)
     status_text = st.empty()
-
+    #Membuat proses loading prediksi
     for i in range(1, 101):
       status_text.text(f"{i}% complete")
       bar.progress(i)
@@ -237,7 +237,7 @@ with tab1:
         time.sleep(1)
         status_text.empty()
         bar.empty()
-
+    #Menampilkan hasil prediksi dari 0-4 yang menunjukan tingkat penyakit jantung
     if prediction == 0:
       result = ":green[**Healthy**]"
     elif prediction == 1:
@@ -248,38 +248,38 @@ with tab1:
       result = ":red[**Heart disease level 3**]"
     elif prediction == 4:
       result = ":red[**Heart disease level 4**]"
-
+  #Menampilkan hasil prediksi
   st.write("")
   st.write("")
   st.subheader("Prediction:")
   st.subheader(result)
-
+#Multi Prediksi
 with tab2:
   st.header("Predict multiple data:")
-
+  #Membuat sample data pada csv
   sample_csv = df_final.iloc[:5, :-1].to_csv(index=False).encode('utf-8')
-
+  #Membuat button download csv
   st.write("")
   st.download_button("Download CSV Example", data=sample_csv, file_name='sample_heart_disease_parameters.csv', mime='text/csv')
-
+  #Membuat upload csv untuk multi prediksi
   st.write("")
   st.write("")
   file_uploaded = st.file_uploader("Upload a CSV file", type='csv')
-
+  #Jika file csv sudah dibaca maka akan dibuat hasil prediksinya
   if file_uploaded:
     uploaded_df = pd.read_csv(file_uploaded)
     prediction_arr = model.predict(uploaded_df)
 
     bar = st.progress(0)
     status_text = st.empty()
-
+    #Membuat proses loading saat upload
     for i in range(1, 70):
       status_text.text(f"{i}% complete")
       bar.progress(i)
       time.sleep(0.01)
 
     result_arr = []
-
+    #Menampilkan hasil prediksi dari 0-4 yang menunjukan tingkat penyakit jantung
     for prediction in prediction_arr:
       if prediction == 0:
         result = "Healthy"
@@ -292,9 +292,9 @@ with tab2:
       elif prediction == 4:
         result = "Heart disease level 4"
       result_arr.append(result)
-
+    #Hasil multi prediksi akan dibuat menjadi dataframe
     uploaded_result = pd.DataFrame({'Prediction Result': result_arr})
-
+    #Membuat proses loading saat akan memprediksi
     for i in range(70, 101):
       status_text.text(f"{i}% complete")
       bar.progress(i)
@@ -303,9 +303,10 @@ with tab2:
         time.sleep(1)
         status_text.empty()
         bar.empty()
-
+    
     col1, col2 = st.columns([1, 2])
-
+    #pada column 1 nantinya akan menampilkan hasil resultnya
+    #pada column 2 akan menampilkan input user yang berbentuk dataframe
     with col1:
       st.dataframe(uploaded_result)
     with col2:
